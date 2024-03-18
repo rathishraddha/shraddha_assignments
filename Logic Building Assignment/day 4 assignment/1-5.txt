@@ -1,0 +1,170 @@
+1.public class Main {
+    public static void main(String[] args) {
+        // Create an integer array
+        int[] array = {5, 4, 3, 9, 1, 7, 9};
+
+        // Calculate the sum of all elements
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+
+        // Calculate the average of the elements
+        double average = (double) sum / array.length;
+
+        // Print the average value
+        System.out.println("Average: " + average);
+    }
+}
+
+
+
+2.public class MinMaxFinder {
+    public static void main(String[] args) {
+        
+        int[] array = {5, 4, 3, 9, 1, 7, 9};
+
+        int min = array[0];
+        int max = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
+    }
+}
+
+
+
+3.import java.util.Scanner;
+
+public class MultipleOfThreeSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a non-negative integer: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+
+        for (int i = 0; i <= n; i++) {
+            
+            int t = 2 * (i - 1);
+            if (t % 3 == 0) {
+                
+                sum += t;
+            }
+        }
+
+        System.out.println("Sum of multiples of 3: " + sum);
+
+        scanner.close();
+    }
+}
+
+
+
+4.import java.util.Scanner;
+
+public class MatrixAddition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input matrix size from user
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+
+        // Initialize matrices
+        int[][] matrix1 = new int[rows][columns];
+        int[][] matrix2 = new int[rows][columns];
+        int[][] sum = new int[rows][columns];
+
+        // Input elements of the first matrix
+        System.out.println("Enter the elements of the first matrix:");
+        inputMatrix(scanner, matrix1);
+
+        // Input elements of the second matrix
+        System.out.println("Enter the elements of the second matrix:");
+        inputMatrix(scanner, matrix2);
+
+        // Add the matrices
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+
+        // Display the sum matrix
+        System.out.println("Sum of the matrices:");
+        displayMatrix(sum);
+
+        scanner.close();
+    }
+
+    // Method to input matrix elements
+    public static void inputMatrix(Scanner scanner, int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+
+    // Method to display matrix
+    public static void displayMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+5.public class MatrixEquality {
+    public static void main(String[] args) {
+        // Define the matrices
+        int[][] matrix1 = {{1, 2}, {3, 4}};
+        int[][] matrix2 = {{1, 2}, {3, 4}};
+
+        // Compare the matrices
+        boolean equal = true;
+
+        if (matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length) {
+            equal = false;
+        } else {
+            for (int i = 0; i < matrix1.length; i++) {
+                for (int j = 0; j < matrix1[0].length; j++) {
+                    if (matrix1[i][j] != matrix2[i][j]) {
+                        equal = false;
+                        break;
+                    }
+                }
+                if (!equal) {
+                    break;
+                }
+            }
+        }
+
+        // Print the result
+        if (equal) {
+            System.out.println("Matrices are equal");
+        } else {
+            System.out.println("Matrices are not equal");
+        }
+    }
+}
+
+

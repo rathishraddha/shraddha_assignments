@@ -1,0 +1,197 @@
+1. public class NumberPattern {
+    public static void main(String[] args) {
+        int rows = 5;
+        
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+2.public class ReverseNumberPattern {
+    public static void main(String[] args) {
+        int rows = 5;
+        
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 5; j >= i; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+3.public class MixedPattern {
+    public static void main(String[] args) {
+        int rows = 6;
+        
+        for (int i = 1; i <= rows; i++) {
+            if (i % 2 == 0) {
+                for (int j = 1; j <= i; j++) {
+                    System.out.print(i);
+                }
+            } else {
+                for (int j = 1; j <= i; j++) {
+                    System.out.print((char) (i + 64));
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+4.public class ArraySum {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int sum = 0;
+        
+        // Loop through the array and add each element to the sum
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        
+        // Print the sum
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+
+
+5. public class ArraySum {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int sum = 0;
+        
+        // Loop through the array and add each element to the sum
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        
+        // Print the sum
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+
+
+6. public class ReverseArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        
+        System.out.println("Original array:");
+        printArray(array);
+        
+        // Reverse the array
+        reverseArray(array);
+        
+        System.out.println("\nReversed array:");
+        printArray(array);
+    }
+    
+    // Method to reverse the array
+    public static void reverseArray(int[] array) {
+        int start = 0;
+        int end = array.length - 1;
+        
+        while (start < end) {
+            // Swap elements at start and end positions
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            
+            // Move start and end pointers towards the center
+            start++;
+            end--;
+        }
+    }
+    
+    // Method to print the array
+    public static void printArray(int[] array) {
+        System.out.print("{");
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                System.out.print(",");
+            }
+            System.out.print(array[i]);
+        }
+        System.out.print("}");
+    }
+}
+
+
+7.import java.util.HashSet;
+
+public class CommonElements {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {3, 4, 5, 6, 7};
+        
+        // Find common elements
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> commonElements = new HashSet<>();
+        
+        // Add elements of the first array to a set
+        for (int num : array1) {
+            set1.add(num);
+        }
+        
+        // Check elements of the second array against the set
+        for (int num : array2) {
+            if (set1.contains(num)) {
+                commonElements.add(num);
+            }
+        }
+        
+        // Convert set to array
+        int[] resultArray = new int[commonElements.size()];
+        int index = 0;
+        for (int num : commonElements) {
+            resultArray[index++] = num;
+        }
+        
+        // Print common elements
+        System.out.print("Common elements: {");
+        for (int i = 0; i < resultArray.length; i++) {
+            if (i > 0) {
+                System.out.print(", ");
+            }
+            System.out.print(resultArray[i]);
+        }
+        System.out.println("}");
+    }
+}
+
+
+8. import java.util.HashSet;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 4, 4, 5};
+        
+        // Create a HashSet to store unique elements
+        HashSet<Integer> set = new HashSet<>();
+        
+        // Add elements to the HashSet
+        for (int num : array) {
+            set.add(num);
+        }
+        
+        // Convert HashSet back to array
+        int[] resultArray = new int[set.size()];
+        int index = 0;
+        for (int num : set) {
+            resultArray[index++] = num;
+        }
+        
+        // Print the array without duplicates
+        System.out.print("Array without duplicates: {");
+        for (int i = 0; i < resultArray.length; i++) {
+            if (i > 0) {
+                System.out.print(", ");
+            }
+            System.out.print(resultArray[i]);
+        }
+        System.out.printl
