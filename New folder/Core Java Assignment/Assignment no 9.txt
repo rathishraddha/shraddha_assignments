@@ -1,0 +1,157 @@
+1] //exception handling
+//10/0=arithmaticexception
+import java.util.Scanner;
+
+public class Day13_5 {
+    public static void main(String[] args) {
+        Scanner sc = null;
+
+        try{
+        System.out.println("inside try block");
+        sc = new Scanner(System.in);
+        System.out.println("requesting os resource");
+        System.out.println("num1: ");
+        int num1 = sc.nextInt();
+        System.out.println("num2: ");
+        int num2 = sc.nextInt();
+        if(num2 == 0)
+          throw new ArithmeticException("divide by 0 exception");
+        int result = num1 / num2;
+        System.out.println("result: " + result);
+        } catch(ArithmeticException ex) {
+             System.out.println("inside catch block");
+            ex.printStackTrace();
+        }
+        finally {
+            sc.close();
+        System.out.println("inside finally block");
+
+
+        }
+
+    }
+}
+
+OUTPUT:
+-------
+inside try block
+requesting os resource
+num1: 
+5
+num2: 
+0
+inside catch block
+java.lang.ArithmeticException: divide by 0 exception
+        at Day13_5.main(Day13_5.java:18)
+inside finally block
+
+
+2] //an integer as a parameter and throws an exception if the number is odd
+
+import java.util.Scanner;
+public class Day14_1{
+    public static void main(String[] args) {
+        Scanner sc = null;
+
+        try {
+             System.out.println("Take an input: ");
+             sc = new Scanner(System.in);
+             int num = sc.nextInt();
+             if(num % 2 != 0) 
+             throw new ArithmeticException("number is odd...!");
+                 int result = (num % 2 == 0) ? 1 : 0;
+                System.out.println("result: "+ result);
+            }
+            catch(ArithmeticException ex) {
+                ex.printStackTrace();
+            }
+            sc.close();
+       }
+}
+
+OUTPUT:
+-------
+Take an input: 
+5
+java.lang.ArithmeticException: number is odd...!
+        at Day14_1.main(Day14_1.java:13)
+
+
+3] //Write a Java program throws an array index out of bound exception.
+
+import java.util.Scanner;
+
+public class Day14_2 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+
+        try {
+            int value = arr[5];
+            System.out.println("Value at index 5: " + value);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception caught: " + e);
+        }
+    }
+}
+
+
+OUTPUT:
+-------
+Exception caught: java.lang.ArrayIndexOutOfBoundsException: 5
+
+
+
+4] //multiple catch block
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Day13_8 {
+    public static void main(String[] args) {
+        Scanner sc = null;
+
+        try{
+        System.out.println("inside try block");
+        sc = new Scanner(System.in);
+        System.out.println("requesting os resource");
+        System.out.println("num1: ");
+        int num1 = sc.nextInt();
+        System.out.println("num2: ");
+        int num2 = sc.nextInt();
+        if(num2 == 0)
+          throw new ArithmeticException("divide by 0 exception");
+        int result = num1 / num2;
+        System.out.println("result: " + result);
+        } catch(ArithmeticException ex) { 
+             System.out.println("inside Arithmetic catch block");
+            ex.printStackTrace();
+        }
+        catch(RuntimeException ex) { 
+             System.out.println("inside runtime catch block");
+            ex.printStackTrace();
+        }
+        catch(Exception ex) { 
+             System.out.println("inside exception catch block");
+            ex.printStackTrace();
+        }
+        
+        finally {
+            sc.close();
+        System.out.println("inside finally block");
+        }
+
+    }
+}
+
+OUTPUT:
+-------
+inside try block
+requesting os resource
+num1: 
+5
+num2: 
+0
+inside Arithmetic catch block
+java.lang.ArithmeticException: divide by 0 exception
+        at Day13_8.main(Day13_8.java:19)
+inside finally block

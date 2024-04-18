@@ -1,0 +1,345 @@
+1.There are three mistakes in this code:
+1.Missing semicolon after the declaration of the variable i.
+2.The condition i<5 in the while loop is initially false, so the loop will not execute at all.
+3.There is no closing curly brace for the while loop.7. The code repeatedly prompts the user to enter a number until they enter 0, and then it stops.
+
+
+2.public class Main {
+    public static void main(String[] args) {
+        int result = 45; 
+
+        if (result > 40) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+}
+
+
+3.There will be 10 exclamation marks.
+
+
+4.public class Main {
+    public static void main(String[] args) {
+        int number = 10;
+        for (; number < 15; number++) {
+        System.out.println("*");
+  }
+    }
+  }
+
+
+5.
+1.int i = getnumber(); = It initialises variable i.
+2.while (i < 10) { = It's a while loop that continues the value of i<10.
+3.i++ = It's a increment operator.
+4.int j = getnumber(); = It initialises variable j.
+5.if (j=0) {break;} = This line will be break if j=0.
+6.else if (j-1) {continue;} = This line will be continue the loop.
+7.System.out.println(i); = This line will print value of i.
+8.System.out.println("finished"); = It will print finished after the loop.
+
+
+6.int i = // some value;
+
+switch (i) {
+    case 10:
+        System.out.println("Congratulations you have full marks");
+        break;
+    case 9:
+        System.out.println("Congratulations you have almost full marks");
+        break;
+    case 8:
+        System.out.println("Congratulations you have done very well");
+        break;
+    case 7:
+        System.out.println("Congratulations you have done well");
+        break;
+    case 6:
+        System.out.println("You are doing alright but could study more");
+        break;
+    case 5:
+        System.out.println("You only got half marks, you need to do more");
+        break;
+    case 4:
+        System.out.println("You got less than half marks, you need to do more");
+        break;
+    case 3:
+        System.out.println("You have got low marks, see a teacher");
+        break;
+    case 2:
+        System.out.println("You have got very low marks, see a teacher");
+        break;
+    case 1:
+        System.out.println("You only got 1 mark, see a teacher");
+        break;
+    default:
+        System.out.println("You have failed abysmally");
+}
+
+
+7.This code will repeatedly execute the block of code inside the do statement as long as the value entered by getnumber() is not equal to 0. Once the value entered becomes 0, the loop will terminate.
+
+
+
+
+8.The program will print: Hello Mumbai
+
+
+
+9.public class Main {
+    public static void main(String[] args) {
+        for (int i = 11; i < 20; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+10. In this code there is an assignment operation i = 10 inside the if statement condition instead of a comparison operation.
+
+
+11.public class Main {
+    public static void main(String[] args) {
+        int number;
+        
+        for (;;) {
+            number = getnumber();
+            if (number == 0) {
+                break;
+            }
+            System.out.println(number);
+        }
+    }
+    
+    // Dummy method for getting a number (replace with your actual method)
+    public static int getnumber() {
+        // Simulating user input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        return scanner.nextInt();
+    }
+}
+
+
+12.If i is less than 10 or equal to 15, it will increment i by 1 and print its value, if i is not less than 10 and not equal to 15, the code inside the if statement will not execute.
+
+
+13.import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        System.out.println("Multiplication table of " + number + ":");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " * " + i + " = " + (number * i));
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+14.import java.util.Scanner;
+
+public class FactorialCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        int factorial = 1;
+        int i = 1;
+
+        while (i <= number) {
+            factorial *= i;
+            i++;
+        }
+
+        System.out.println("Factorial of " + number + " is: " + factorial);
+
+        scanner.close();
+    }
+}
+
+
+15.import java.util.Scanner;
+
+public class SumOfDigitsCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        int sum = 0;
+        int remainder;
+
+        int tempNumber = number; // Store the original number for later use
+
+        // Calculate the sum of digits
+        do {
+            remainder = tempNumber % 10; // Get the last digit
+            sum += remainder; // Add the last digit to sum
+            tempNumber /= 10; // Remove the last digit
+        } while (tempNumber != 0);
+
+        System.out.println("Sum of digits of " + number + " is: " + sum);
+
+        scanner.close();
+    }
+}
+
+
+16.import java.util.Scanner;
+
+public class PrimeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        boolean isPrime = true;
+
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+17.import java.util.Scanner;
+
+public class MonthName {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number (1 to 12) representing a month: ");
+        int monthNumber = scanner.nextInt();
+
+        String monthName;
+
+        switch (monthNumber) {
+            case 1:
+                monthName = "January";
+                break;
+            case 2:
+                monthName = "February";
+                break;
+            case 3:
+                monthName = "March";
+                break;
+            case 4:
+                monthName = "April";
+                break;
+            case 5:
+                monthName = "May";
+                break;
+            case 6:
+                monthName = "June";
+                break;
+            case 7:
+                monthName = "July";
+                break;
+            case 8:
+                monthName = "August";
+                break;
+            case 9:
+                monthName = "September";
+                break;
+            case 10:
+                monthName = "October";
+                break;
+            case 11:
+                monthName = "November";
+                break;
+            case 12:
+                monthName = "December";
+                break;
+            default:
+                monthName = "Invalid month number";
+                break;
+        }
+
+        System.out.println("Month corresponding to number " + monthNumber + " is: " + monthName);
+
+        scanner.close();
+    }
+}
+
+
+
+18.import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("Choose an operation:");
+        System.out.println("1. Addition (+)");
+        System.out.println("2. Subtraction (-)");
+        System.out.println("3. Multiplication (*)");
+        System.out.println("4. Division (/)");
+
+        int choice = scanner.nextInt();
+        double result;
+
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case 2:
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case 3:
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error! Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Error! Invalid operation.");
+        }
+
+        scanner.close();
+    }
+}
+

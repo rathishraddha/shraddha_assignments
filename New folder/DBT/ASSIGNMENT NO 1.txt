@@ -1,0 +1,168 @@
+ASSIGNMENT NO 1
+---------------
+
+A]SALESPEOPLE
+-------------
+mysql> CREATE DATABASE
+    -> ASSIGNMENT_NO_1;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> USE ASSIGNMENT_NO_1;
+Database changed
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| assignment_no_1    |
+| cdacdb             |
+| information_schema |
+| khargar            |
+| mysql              |
+| nandurbar          |
+| performance_schema |
+| sdb                |
+| sys                |
+| yt                 |
++--------------------+
+10 rows in set (0.01 sec)
+
+mysql> CREATE TABLE SALESPEOPLE(
+    -> Snum int(4),
+    -> Sname varchar(10),
+    -> City varchar(10),
+    -> Comm float(3,2)
+    -> );
+Query OK, 0 rows affected, 2 warnings (0.05 sec)
+
+mysql> DESC SALESPEOPLE;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Snum  | int         | YES  |     | NULL    |       |
+| Sname | varchar(10) | YES  |     | NULL    |       |
+| City  | varchar(10) | YES  |     | NULL    |       |
+| Comm  | float(3,2)  | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> INSERT INTO SALESPEOPLE
+    -> VALUES('1001','Peel','London','.12'),
+    -> ('1002','Serres','San Jose','.13'),
+    -> ('1003','Motika','London','.11'),
+    -> ('1004','Rifkin','Barcelona','.15'),
+    -> ('1008','Axelrod','Net York','.10');
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SALESPEOPLE;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1003 | Motika  | London    | 0.11 |
+| 1004 | Rifkin  | Barcelona | 0.15 |
+| 1008 | Axelrod | Net York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+B]CUSTOMER
+----------
+mysql> CREATE TABLE CUSTOMERS(
+    -> Cnum int(4),
+    -> Cname varchar(10),
+    -> City varchar(10),
+    -> Rating int(4),
+    -> Snum int(4)
+    -> );
+Query OK, 0 rows affected, 3 warnings (0.04 sec)
+
+mysql> DESC CUSTOMERS;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| Cnum   | int         | YES  |     | NULL    |       |
+| Cname  | varchar(10) | YES  |     | NULL    |       |
+| City   | varchar(10) | YES  |     | NULL    |       |
+| Rating | int         | YES  |     | NULL    |       |
+| Snum   | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO CUSTOMERS
+    -> VALUES('2001','HOFFMAN','LONDON','100','1001'),
+    -> ('2002','GIOVANNI','ROME','200','1003'),
+    -> ('2005','LIU','SAN JOSE','200','1002'),
+    -> ('2004','HUMA','BERLIN','300','1005'),
+    -> ('2006','SIA','NEW YORK','100','1007'),
+    -> ('2008','JOHN','AMSTRADAM','300','1006'),
+    -> ('2007','GURU','ROME','100','1004');
+Query OK, 7 rows affected (0.02 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM CUSTOMERS;
++------+----------+-----------+--------+------+
+| Cnum | Cname    | City      | Rating | Snum |
++------+----------+-----------+--------+------+
+| 2001 | HOFFMAN  | LONDON    |    100 | 1001 |
+| 2002 | GIOVANNI | ROME      |    200 | 1003 |
+| 2005 | LIU      | SAN JOSE  |    200 | 1002 |
+| 2004 | HUMA     | BERLIN    |    300 | 1005 |
+| 2006 | SIA      | NEW YORK  |    100 | 1007 |
+| 2008 | JOHN     | AMSTRADAM |    300 | 1006 |
+| 2007 | GURU     | ROME      |    100 | 1004 |
++------+----------+-----------+--------+------+
+7 rows in set (0.00 sec)
+
+C]ORDERS
+--------
+mysql> CREATE TABLE ORDERS(
+    -> Onum int(4),
+    -> Amt float(7,2),
+    -> Odate date,
+    -> Cnum int(4),
+    -> Snum int(4)
+    -> );
+Query OK, 0 rows affected, 4 warnings (0.03 sec)
+
+mysql> DESC ORDERS;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| Onum  | int        | YES  |     | NULL    |       |
+| Amt   | float(7,2) | YES  |     | NULL    |       |
+| Odate | date       | YES  |     | NULL    |       |
+| Cnum  | int        | YES  |     | NULL    |       |
+| Snum  | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO ORDERS
+    -> VALUES('3001','18.69','1990-10-03','2008',1007),
+    -> ('3003','767.69','1990-10-03','2001',1001),
+    -> ('3002','1900.00','1990-10-03','2007',1004),
+    -> ('3005','542.12','1990-10-03','2003',1002),
+    -> ('3004','02.12','1990-10-04','2008',1007),
+    -> ('3009','12.22','1990-10-04','2002',1003),
+    -> ('3007','2.1','1990-10-04','2004',1002),
+    -> ('3011','1254.23','1990-10-03','2004',1002),
+    -> ('3015','4.23','1990-10-04','2010',1006);
+Query OK, 9 rows affected (0.01 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM ORDERS;
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3003 |  767.69 | 1990-10-03 | 2001 | 1001 |
+| 3002 | 1900.00 | 1990-10-03 | 2007 | 1004 |
+| 3005 |  542.12 | 1990-10-03 | 2003 | 1002 |
+| 3004 |    2.12 | 1990-10-04 | 2008 | 1007 |
+| 3009 |   12.22 | 1990-10-04 | 2002 | 1003 |
+| 3007 |    2.10 | 1990-10-04 | 2004 | 1002 |
+| 3011 | 1254.23 | 1990-10-03 | 2004 | 1002 |
+| 3015 |    4.23 | 1990-10-04 | 2010 | 1006 |
++------+---------+------------+------+------+
+9 rows in set (0.00 sec)
+

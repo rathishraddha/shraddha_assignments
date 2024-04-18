@@ -1,0 +1,9 @@
+1] SELECT Onum, Amt, Odate FROM Orders;
+
+2] SELECT *
+   FROM Customers
+   WHERE Snum = 1001;
+
+3] 
+
+

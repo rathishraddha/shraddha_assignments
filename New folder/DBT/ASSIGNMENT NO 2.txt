@@ -1,0 +1,10 @@
+1] Customer ID field of the Customers table is the primary key.
+   COMMAND: SHOW CREATE TABLE Customers;
+
+2] Rating is the fourth column of customers table.
+
+3] row = tuple/record
+   column = attribute/field,property
+
+4] It isn't possible to see the first five rows of a table because no sorting criteria has been specified. You need to sort the table by a specific column to  
+   determine the first five rows.

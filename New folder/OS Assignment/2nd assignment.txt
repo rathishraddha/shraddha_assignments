@@ -1,0 +1,245 @@
+PART A]
+
+1.echo "Hello, World!": This will simply output "Hello, World!" to the terminal.
+
+2.name="Productive": This assigns the value "Productive" to the variable name.
+
+3.touch file.txt: This will create an empty file named file.txt.
+
+4.ls -a: This will list all files including hidden files and directories in the current directory.
+
+5.rm file.txt: This will remove (delete) the file named file.txt.
+
+6.cp file1.txt file2.txt: This will copy the contents of file1.txt into file2.txt. If file2.txt does not exist, it will be created.
+
+7.mv file.txt /path/to/directory/: This will move the file named file.txt to the directory specified by /path/to/directory/.
+
+8.chmod 755 script.sh: This will change the permissions of script.sh to allow the owner to read, write, and execute, while allowing others to only read and execute.
+
+9.grep "pattern" file.txt: This will search for the string "pattern" in the file file.txt and print out the lines containing it.
+
+10.kill PID: This will send a signal to the process with the specified PID (Process ID) to terminate it.
+
+11.mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt: This will create a directory named mydir, change into that directory, create a file named file.txt, write "Hello, World!" into it, and then display the content of file.txt.
+
+12.ls -l | grep ".txt": This will list all files in the current directory in long format (ls -l) and then filter the output to only show lines containing ".txt".
+
+13.cat file1.txt file2.txt | sort | uniq: This will concatenate the contents of file1.txt and file2.txt, sort the lines alphabetically, and then remove duplicate lines.
+
+14.ls -l | grep "^d": This will list all files and directories in the current directory in long format (ls -l) and then filter the output to only show lines starting with "d", which indicates directories.
+
+15.grep -r "pattern" /path/to/directory/: This will recursively search for the string "pattern" in all files under the directory specified by /path/to/directory/.
+
+16.cat file1.txt file2.txt | sort | uniq –d: This will concatenate the contents of file1.txt and file2.txt, sort the lines alphabetically, and then print only the duplicate lines.
+
+17.chmod 644 file.txt: This will change the permissions of file.txt to allow the owner to read and write, while allowing others to only read.
+
+18.cp -r source_directory destination_directory: This will copy the contents of source_directory to destination_directory, including all subdirectories and files recursively.
+
+19.find /path/to/search -name "*.txt": This will search for files with the extension ".txt" under the directory specified by /path/to/search.
+
+20.chmod u+x file.txt: This will add execute permission for the owner of file.txt.
+
+21.echo $PATH: This will print the value of the PATH environment variable, which contains a list of directories where executable files are located.
+
+
+
+PART B]
+ 
+1. ls is used to list files and directories in a directory--> True
+
+2. mv is used to move files and directories--> True
+
+3. cd is used to copy files and directories--> False
+
+4. pwd stands for "print working directory" and displays the current directory--> True
+
+5. grep is used to search for patterns in files-->True
+
+6. chmod 755 file.txt gives read, write, and execute permissions to the owner, and read and execute 
+permissions to group and others-->True
+
+7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1 
+if directory1 does not exist--> True
+
+8. rm -rf file.txt deletes a file forcefully without confirmation--> True
+
+
+1. chmodx is used to change file permissions--> Incorrect,the correct command is chmod. 
+2. cpy is used to copy files and directories--> Incorrect,the correct command is cp.
+3. mkfile is used to create a new file--> Incorrect,the correct command is touch.
+4. catx is used to concatenate files--> Incorrect,the correct command is cat.
+5. rn is used to rename files--> Incorrect,the correct command is mv.
+
+
+
+PART C]
+
+1.shraddha_rathi@asus:~$ vi t1.sh
+shraddha_rathi@asus:~$ chmod +x t1.sh
+shraddha_rathi@asus:~$ ./t1.sh
+Hello, World!
+shraddha_rathi@asus:~$ cat t1.sh
+#i/bin/bash
+echo "Hello, World!"
+
+
+2.shraddha_rathi@asus:~$ cat t2.sh
+#i/bin/bash
+echo "name=CDAC Mumbai"
+echo "$name"
+
+shraddha_rathi@asus:~$ ./t2.sh
+name=CDAC Mumbai
+
+3.shraddha_rathi@asus:~$ cat t3.sh
+#i/bin/bash
+echo "enter a number"
+read number
+echo "You enterd a number:$number"
+shraddha_rathi@asus:~$ ./t3.sh
+enter a number
+5
+You enterd a number:5
+
+4.shraddha_rathi@asus:~$ cat t4.sh
+#i/bin/bash
+echo "enter num1:"
+read x
+echo "enter num2:"
+read y
+(( sum=x+y))
+echo "Result=$sum"
+
+shraddha_rathi@asus:~$ ./t4.sh
+enter num1:
+5
+enter num2:
+3
+Result=8
+
+5.shraddha_rathi@asus:~$ cat t5.sh
+#!/bin/bash
+echo "take a number:"
+read num
+if (( $num % 2 == 0 ));then
+    echo "Even"
+else
+    echo "Odd"
+fi
+shraddha_rathi@asus:~$ ./t5.sh
+take a number:
+5
+Odd
+
+6.shraddha_rathi@asus:~$ cat t6.sh
+#!/bin/bash
+for ((i=1; i<=5; i++))
+do
+    echo $i
+done
+
+shraddha_rathi@asus:~$ ./t6.sh
+1
+2
+3
+4
+5
+
+7.shraddha_rathi@asus:~$ cat t7.sh
+#!/bin/bash
+count=1
+while [ $count -le 5 ]
+do
+    echo "$count"
+    ((count++))
+done
+shraddha_rathi@asus:~$ ./t7.sh
+1
+2
+3
+4
+5
+
+8.shraddha_rathi@asus:~$ cat t8.sh
+#!/bin/bash
+if [ -e "file.txt" ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi
+shraddha_rathi@asus:~$ ./t8.sh
+File does not exist
+
+9.shraddha_rathi@asus:~$ cat t9.sh
+#!/bin/bash
+echo "enter a number:"
+read number
+if [ $number -gt 10 ]; then
+    echo "The number is greater than 10."
+else
+    echo "The number is not greater than 10."
+fi
+shraddha_rathi@asus:~$ ./t9.sh
+enter a number:
+5
+The number is not greater than 10.
+shraddha_rathi@asus:~$ ./t9.sh
+enter a number:
+88
+The number is greater than 10.
+
+10.shraddha_rathi@asus:~$ cat t10.sh
+#!/bin/bash
+start=1
+end=10
+for ((i=$start; i<=$end; i++))
+do
+    for ((j=$start; j<=$end; j++))
+    do
+        result=$((i * j))
+    printf "%-3d" $result
+    done
+    echo ""
+done
+
+shraddha_rathi@asus:~$ ./t10.sh
+1  2  3  4  5  6  7  8  9  10
+2  4  6  8  10 12 14 16 18 20
+3  6  9  12 15 18 21 24 27 30
+4  8  12 16 20 24 28 32 36 40
+5  10 15 20 25 30 35 40 45 50
+6  12 18 24 30 36 42 48 54 60
+7  14 21 28 35 42 49 56 63 70
+8  16 24 32 40 48 56 64 72 80
+9  18 27 36 45 54 63 72 81 90
+10 20 30 40 50 60 70 80 90 100
+
+11.shraddha_rathi@asus:~$ cat t11.sh
+#!/bin/bash
+echo "Enter numbers (enter a negative number to exit):"
+while true
+do
+    read number
+    if [ $number -lt 0 ]; then
+        echo "Exiting loop..."
+        break
+    fi
+    square=$((number * number))
+    echo "Square of $number is $square"
+done
+
+shraddha_rathi@asus:~$ ./t11.sh
+Enter numbers (enter a negative number to exit):
+6
+Square of 6 is 36
+8
+Square of 5 is 25
+-8
+Exiting loop...
+
+
+
+
+
+

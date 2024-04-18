@@ -1,0 +1,114 @@
+//1. Print number without using loops
+
+import java.util.Scanner;
+
+public class Assi2 {
+    
+    static void show(int n) {
+        if (n >= 1) {
+            show(n - 1); // Recursive call with n - 1
+            System.out.println(n); // Print the current value of n
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = in.nextInt();
+        if (num >= 1) {
+            System.out.println("Printing the numbers from 1 to " + num + ":");
+            show(num);
+        } else {
+            System.out.println("Number is invalid");
+        }
+        in.close();
+    }
+}
+
+//OUTPUT:
+Enter a number: 5
+Printing the numbers from 1 to 5:
+1
+2
+3
+4
+5
+
+
+//2. Sum of natural numbers using recursion
+import java.util.Scanner;
+
+public class Assi3 {
+    static int sumOfNaturalNumbers(int n) {
+        if (n == 1) {
+            return 1; // Base case: When n becomes 1, return 1
+        } else {
+            return n + sumOfNaturalNumbers(n - 1); // Recursively call the function with n-1
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int num = in.nextInt();
+
+        if (num <= 0) {
+            System.out.println("Invalid input. Please enter a positive integer.");
+        } else {
+            int sum = sumOfNaturalNumbers(num);
+            System.out.println("Sum of natural numbers from 1 to " + num + " is: " + sum);
+        }
+        
+        in.close();
+    }
+}
+
+//OUTPUT:
+Enter a positive integer: 7
+Sum of natural numbers from 1 to 7 is: 28
+
+
+3. Sum of array elements using recursion
+
+import java.util.Scanner;
+
+public class Assi3 {
+    static int sumOfArray(int[] arr, int index) {
+        
+        if (index == arr.length) {
+            return 0;
+        }
+       
+        return arr[index] + sumOfArray(arr, index + 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = in.nextInt();
+
+        int[] arr = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        int sum = sumOfArray(arr, 0);
+
+        System.out.println("Sum of array elements: " + sum);
+
+        in.close();
+    }
+}
+
+
+Enter the size of the array: 5
+Enter the elements of the array:
+4
+4
+5
+9
+3
+Sum of array elements: 25

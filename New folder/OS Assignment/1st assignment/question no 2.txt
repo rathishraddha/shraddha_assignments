@@ -1,0 +1,119 @@
+shraddha_rathi@asus:~$ pwd
+/home/shraddha_rathi
+shraddha_rathi@asus:~$ ls
+Head  file  grandfather  myfile  shraddha  snap
+shraddha_rathi@asus:~$ mkdir LinuxAssignment
+shraddha_rathi@asus:~$ cd LinuxAssignment
+shraddha_rathi@asus:~/LinuxAssignment$ mkdir q2
+shraddha_rathi@asus:~/LinuxAssignment$ cd q2
+shraddha_rathi@asus:~/LinuxAssignment/q2$ touch data.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat > data.txt
+1a
+2aa
+3a
+4a
+5a
+6a
+7a
+8a
+9a
+10a
+11a
+12a
+13a
+shraddha_rathi@asus:~/LinuxAssignment/q2$ vi data.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ head -n 10 data.txt
+1a
+2aa
+3a
+4a
+5a
+6a
+7a
+8a
+9a
+10a
+shraddha_rathi@asus:~/LinuxAssignment/q2$ tail -n 5 data.txt
+9a
+10a
+11a
+12a
+13a
+shraddha_rathi@asus:~/LinuxAssignment/q2$ head -n 15 numbers.txt
+head: cannot open 'numbers.txt' for reading: No such file or directory
+shraddha_rathi@asus:~/LinuxAssignment/q2$ vi data.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat >> numbers.txt
+14a
+15a
+16a
+17a
+18a
+19a
+20ashraddha_rathi@asus:~/LinuxAssignment/q2$ head -n 15 numbers.txt
+14a
+15a
+16a
+17a
+18a
+19a
+20ashraddha_rathi@asus:~/LinuxAssignment/q2$ tail -n 3 numbers.txt
+18a
+19a
+20ashraddha_rathi@asus:~/LinuxAssignment/qtr '[:lower:]' '[:upper:]' < input.txt > output.txttxt
+-bash: input.txt: No such file or directory
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat > input.txt
+hello world
+shraddha_rathi@asus:~/LinuxAssignment/q2$ tr 'a-z' 'A-Z' < input.txt > output.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ ls
+data.txt  input.txt  numbers.txt  output.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat output.txt
+HELLO WORLD
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat > duplicate.txt
+aa
+aa
+bb
+bb
+cc
+cc
+dd
+dd
+ee
+ee
+ff
+ff
+gg
+ggshraddha_rathi@asus:~/LinuxAssignment/q2$ cat duplicate.txt | uniq
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+shraddha_rathi@asus:~/LinuxAssignment/q2$ sort fruit.txt | uniq -c
+sort: cannot read: fruit.txt: No such file or directory
+shraddha_rathi@asus:~/LinuxAssignment/q2$ uniq -u duplicate.txt
+shraddha_rathi@asus:~/LinuxAssignment/q2$ fruit.txt
+fruit.txt: command not found
+shraddha_rathi@asus:~/LinuxAssignment/q2$ cat > fruit.txt
+mango mango
+grapes
+grapes
+banana
+chikoo
+kiwi
+watermelon
+shraddha_rathi@asus:~/LinuxAssignment/q2$ uniq -u fruit.txt
+mango mango
+banana
+chikoo
+kiwi
+watermelon
+shraddha_rathi@asus:~/LinuxAssignment/q2$ uniq -c fruit.txt
+      1 mango mango
+      2 grapes
+      1 banana
+      1 chikoo
+      1 kiwi
+      1 watermelon
+shraddha_rathi@asus:~/LinuxAssignment/q2$
