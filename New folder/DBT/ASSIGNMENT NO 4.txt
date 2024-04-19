@@ -4,6 +4,14 @@
    FROM Customers
    WHERE Snum = 1001;
 
-3] 
+3] SELECT City, Sname, Snum, Comm
+   FROM Salespeople;
+
+4] SELECT Rating, Cname
+FROM Customers
+WHERE City = 'SAN JOSE';
+
+5] SELECT DISTINCT Snum
+FROM Orders;
 
 
