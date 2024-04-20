@@ -1,0 +1,21 @@
+1] -SELECT * FROM ORDERS
+    WHERE Odate='1990-10-04' OR Odate='1990-10-03';
+
+   -SELECT * FROM Orders
+    WHERE odate BETWEEN '1990-10-03' AND '1990-10-04';
+
+2] -SELECT * FROM SALESPEOPLE
+    WHERE Sname IN ('Peel','Motika');
+
+   -SELECT c.* FROM Customers c
+    JOIN Salespeople s ON c.snum = s.SNUM
+    WHERE s.Sname IN ('Peel', 'Motika');
+
+3] SELECT * FROM Customers
+   WHERE Cname LIKE '[A-G]%';
+
+4] SELECT * FROM Customers
+   WHERE Cname LIKE 'C%';
+
+5] SELECT * FROM ORDERS;
+   WHERE Amt IS NOT NULL AND Amt !=0;

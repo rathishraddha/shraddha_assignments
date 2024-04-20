@@ -1,0 +1,160 @@
+1] & 4] mysql> CREATE DATABASE
+    -> EXERCISE_1;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> USE EXERCISE_1;
+Database changed
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| assignment_no_1    |
+| cdacdb             |
+| exercise_1         |
+| information_schema |
+| khargar            |
+| mysql              |
+| nandurbar          |
+| performance_schema |
+| sdb                |
+| sys                |
+| yt                 |
++--------------------+
+11 rows in set (0.01 sec)
+
+mysql> CREATE TABLE SEMP(
+    -> EMPNO CHAR(4),
+    -> EMPNAME CHAR(20),
+    -> BASIC FLOAT,
+    -> DEPTNO CHAR(2),
+    -> DEPTHEAD CHAR(4)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> DESC SEMP;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| EMPNO    | char(4)  | YES  |     | NULL    |       |
+| EMPNAME  | char(20) | YES  |     | NULL    |       |
+| BASIC    | float    | YES  |     | NULL    |       |
+| DEPTNO   | char(2)  | YES  |     | NULL    |       |
+| DEPTHEAD | char(4)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO SEMP
+    -> VALUES('0001', 'SUNIL', '6000', '10', NULL),
+    ->       ('0002', 'HIREN', '8000', '20', NULL),
+    ->       ('0003', 'ALI', '4000', '10', '0001'),
+    ->       ('0004', 'GEORGE', '6000', NULL, '0002');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SEMP;
++-------+---------+-------+--------+----------+
+| EMPNO | EMPNAME | BASIC | DEPTNO | DEPTHEAD |
++-------+---------+-------+--------+----------+
+| 0001  | SUNIL   |  6000 | 10     | NULL     |
+| 0002  | HIREN   |  8000 | 20     | NULL     |
+| 0003  | ALI     |  4000 | 10     | 0001     |
+| 0004  | GEORGE  |  6000 | NULL   | 0002     |
++-------+---------+-------+--------+----------+
+4 rows in set (0.00 sec)
+
+2] & 3]
+mysql> USE EXERCISE_1;
+Database changed
+mysql> CREATE TABLE SDEPT(
+    -> DEPTNO CHAR(2),
+    -> DEPTNAME CHAR(15)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO SDEPT
+    -> VALUES('10', 'Development'),
+    -> ('20', 'Training');
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SDEPT;
++--------+-------------+
+| DEPTNO | DEPTNAME    |
++--------+-------------+
+| 10     | Development |
+| 20     | Training    |
++--------+-------------+
+
+5]SUPPLIER:
++------+-------+--------+--------+
+| SUP  | SNAME | STATUS | CITY   |
++------+-------+--------+--------+
+| S1   | SUP 1 |     10 | CITY A |
+| S2   | SUP 2 |     20 | CITY B |
+| S3   | SUP 3 |     30 | CITY C |
++------+-------+--------+--------+
+
+PARTS:
++------+--------+--------+--------+--------+
+| PUP  | PNAME  | COLOR  | WEIGHT | CITY   |
++------+--------+--------+--------+--------+
+| P1   | PART 1 | RED    |  10.50 | CITY A |
+| P2   | PART 2 | YELLOW |  20.30 | CITY B |
+| P3   | PART 3 | GREEN  |  15.70 | CITY C |
++------+--------+--------+--------+--------+
+
+PROJECTS:
++------+-----------+--------+
+| J    | JNAME     | CITY   |
++------+-----------+--------+
+| J1   | PROJECT 1 | CITY A |
+| J2   | PROJECT 2 | CITY B |
+| J3   | PROJECT 3 | CITY C |
++------+-----------+--------+
+
+SPJ:
++------+------+------+------+
+| SUP  | PUP  | JUJ  | QTY  |
++------+------+------+------+
+| S1   | P1   | J1   |  100 |
+| S2   | P2   | J2   |  200 |
+| S3   | P3   | J3   |  300 |
++------+------+------+------+
+
+5]  SELECT * FROM SUPPLIER;
+
+6] select SUP, SNAME  FROM SUPPLIER;
+
+7] select PNAME, COLOR FROM PARTS
+   WHERE CITY = 'LONDON';
+
+8] select * FROM SUPPLIER
+   WHERE CITY = 'LONDON';
+
+9] select * FROM SUPPLIER
+   WHERE CITY = 'PARIS' OR 'ATHENS';
+
+10] SELECT * FROM PROJECTS
+    WHERE CITY = 'ATHENS';
+
+11] SELECT PNAME FROM PARTS
+    WHERE WEIGHT >= 12 AND WEIGHT <= 14;
+
+12] SELECT * FROM SUPPLIER
+    WHERE STATUS >=20;
+
+13] SELECT * FROM SUPPLIER
+    WHERE CITY <> 'LONDON';
+
+14] SELECT DISTINCT City
+    FROM Supplier;
+
+15] SELECT PUP,
+       PNAME,
+       COLOR,s
+       WEIGHT AS 'Weight in Grams',
+       WEIGHT * 1000 AS 'Weight in Milligrams',
+       WEIGHT / 1000 AS 'Weight in Kilograms'
+FROM PARTS;
+
+
